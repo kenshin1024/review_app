@@ -10,6 +10,20 @@
   </head>
 
   <body>
-    <%= yield %>
+   <header class = "header">
+   <div class = "header_box_left">
+   <div class = "header_title">ReviewApp</div>
+   </div>
+   <div class = "header_box_right">
+   <%= link_to "ログイン", "#" %>
+   <%= link_to "新規登録", "#" %>
+   </div>
+    </header>
+      <%= yield %>
+      <%= form_with url: "#",local: true ,class: "add_form_frame" do |form| %>
+      <%= form.text_field :hoge ,placeholder: "新たに追加する名前を入力してください" ,class: "add_form" %>
+      <div class = add_form_submit_frame><%= form.submit :作成する ,class: "add_form_submit"%></div>
+      <% end %>
+       
   </body>
 </html>

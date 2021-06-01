@@ -1,0 +1,7 @@
+.header{height: 10vh; display: flex; border: 1px solid black;}
+.header_box_left{height: 10vh; width: 70vw; border: 1px solid black; font-size :40px; display: flex; align-items: center; justify-content:center;}
+.header_box_right{width: 30vw; border: 1px solid black;display: flex;align-items: center;justify-content: space-around;}
+.add_form{width: 70vw; height: 10vh; text-align: center;}
+.add_form_frame{display: flex;}
+.add_form_submit_frame{width: 30vw;border-right: 1px solid black;border-bottom: 1px solid black; display: flex;justify-content: center; align-items: center;}
+.add_form_submit{width:20vw;height:8vh;}
