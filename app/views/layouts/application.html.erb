@@ -14,10 +14,18 @@
    <div class = "header_box_left">
    <div class = "header_title">ReviewApp</div>
    </div>
+
+   <% if user_signed_in?%>
+   <div class = "header_box_right">
+   <%= link_to current_user.nickname, "#" %>
+   <%= link_to "ログアウト", destroy_user_session_path, method: :delete%>
+   </div>
+   <% else %>
    <div class = "header_box_right">
    <%= link_to "ログイン", user_session_path %>
    <%= link_to "新規登録", new_user_registration_path %>
    </div>
+   <% end %>
     </header>
       <%= yield %>
   </body>
