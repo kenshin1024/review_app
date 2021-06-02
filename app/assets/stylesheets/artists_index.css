@@ -11,5 +11,5 @@
   width:20vw;height:8vh;border: 1px solid black;
 }
 .artist{
-  border: 1px solid black;font-size: 30px;height:10vh;
+  border: 1px solid black;font-size: 30px;height:10vh; display:flex; justify-content:space-between;align-items: center;
 }

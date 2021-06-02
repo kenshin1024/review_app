@@ -6,9 +6,11 @@
 <div id= "list">
 <% @artists.each do |artist| %>
   <div class="artist">
-    <%= artist.title %>
+  <div><%= artist.title%></div>
+  <div><%= link_to "詳細", artist_path(artist.id) %></div>
   </div>
 <% end %>
+
 </div>
 
 
