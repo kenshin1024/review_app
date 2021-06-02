@@ -1,15 +1,17 @@
 <%= form_with url: "/artists",class: "add_form_frame",id: "form" do |form| %>
-  <%= form.text_field :title ,placeholder: "新たに追加する名前を入力してください" ,class: "add_form"%>
+  <%= form.text_field :title ,placeholder: "新たに追加する名前を入力してください" , class: "add_form", id: "title"%>
   <div class = add_form_submit_frame><%= form.submit :作成する ,id: "submit"%></div>
 <% end %>
 
-<div id="list">
-</div>
-
-
+<div id= "list">
 <% @artists.each do |artist| %>
   <div class="artist">
     <%= artist.title %>
   </div>
 <% end %>
+</div>
+
+
+
+
 
