@@ -1,0 +1,15 @@
+.add_form{
+  width: 70vw; height: 10vh; text-align: center; font-size:25px;border: 1px solid blue;
+}
+.add_form_frame{
+  display: flex; border: 1px solid black;
+}
+.add_form_submit_frame{
+  width: 30vw;border: 1px solid black; display: flex;justify-content: center; align-items: center;
+}
+#submit{
+  width:20vw;height:8vh;border: 1px solid black;
+}
+.artist{
+  border: 1px solid black;font-size: 30px;height:10vh;
+}
