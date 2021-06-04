@@ -2,7 +2,7 @@ class AlbumsController < ApplicationController
   before_action :authenticate_user!
   def show
     @artist = Artist.find(params[:artist_id])
-    @album = Album.find(params[:album_id])
+    @album = Album.find(params[:id])
     @songs = @album.songs.order(id: "DESC")
     @song = Song.new
   end
@@ -14,7 +14,7 @@ class AlbumsController < ApplicationController
   end
 
   def edit
-    album
+    @album = Album.find(params[:id])
   end
 
   def destroy

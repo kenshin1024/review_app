@@ -10,7 +10,7 @@
  
  
  <div class = space>収録曲一覧⬇︎</div>
-<%= form_with model:[@album, @song],class: "add_form_frame",id: "form" do |form| %>
+<%= form_with model:[@artist, @album, @song],class: "add_form_frame",id: "form" do |form| %>
   <%= form.text_field :title ,placeholder: "新たに追加する曲名を入力してください" , class: "add_form", id: "title"%>
   <div class = add_form_submit_frame><%= form.submit :作成する ,id: "submit3"%></div>
 <% end %>
@@ -19,6 +19,7 @@
 <% @songs.each do |song|%>
 <div class = song>
 <div><%= song.title%></div>
+<div><%= link_to "詳細", artist_album_songs_path(song.id),class:"link_to_songs"%></div>
 </div>
 <% end %>
 </div>
