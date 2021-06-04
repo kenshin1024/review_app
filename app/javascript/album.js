@@ -1,9 +1,11 @@
 const buildHTML = (XHR) => {
   const item = XHR.response.album;
+  const getLocation2 = location.href;
+  const getArtistId2 = getLocation2.replace("http://localhost:3000/artists/", "");
   const html =`
   <div class = artist>
   <div>${item.title} </div>
-  <div><a class="link_to_albums" href="/artists/${item.id}">詳細・収録曲</a></div>
+  <div><a class="link_to_albums" href="/artists/${getArtistId2}/albums/${item.id}">詳細・収録曲</a></div>
   </div> `;
   return html;
 };

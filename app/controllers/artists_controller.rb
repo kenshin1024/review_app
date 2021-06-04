@@ -2,7 +2,7 @@ class ArtistsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @artists = Artist.order(id: "DESC")
+    @artists = Artist.where(user_id: current_user.id).order(id: "DESC")
     @artist = Artist.new
   end
 
