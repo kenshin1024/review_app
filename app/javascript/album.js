@@ -1,21 +1,23 @@
 const buildHTML = (XHR) => {
-  const item = XHR.response.artist;
+  const item = XHR.response.album;
+  debugger
   const html =`
   <div class = artist>
   <div>${item.title} </div>
-  <div><a class="link_to_albums" href="/artists/${item.id}">詳細・アルバム</a></div>
+  <div><a class="link_to_albums" href="/artists/albums//${item.id}">詳細・収録曲</a></div>
   </div> `;
   return html;
 };
-  
-  function post (){
-  const submit = document.getElementById("submit");
+
+
+function post (){
+  const submit = document.getElementById("submit2");
   submit.addEventListener('click',(e) => {
   e.preventDefault();
   const form = document.getElementById("form");
   const formData = new FormData(form);
   const XHR = new XMLHttpRequest();
-  XHR.open("POST", "/artists", true);
+  XHR.open("POST", "/artists/:artist_id/albums", true);
   XHR.responseType = "json";
   XHR.send(formData);
   XHR.onload = () => {
@@ -32,3 +34,4 @@ const buildHTML = (XHR) => {
 };
 
 window.addEventListener('load', post);
+

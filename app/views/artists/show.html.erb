@@ -1,3 +1,4 @@
+
 <div class = artist_detail>
   <div class = artist_name>
   <%= @artist.title%>
@@ -7,4 +8,19 @@
   <%= link_to "アーティストの削除", artist_path(params[:id]),method: :delete%>
   </div>
 </div>
+ 
+ 
+ <div class = space>アルバム一覧⬇︎</div>
+<%= form_with model:[@artist, @album],class: "add_form_frame",id: "form" do |form| %>
+  <%= form.text_field :title ,placeholder: "新たに追加するアルバム名を入力してください" , class: "add_form", id: "title"%>
+  <div class = add_form_submit_frame><%= form.submit :作成する ,id: "submit2"%></div>
+<% end %>
 
+<div id = list>
+<% @albums.each do |album|%>
+<div class = album>
+<div><%= album.title%></div>
+  <div><%= link_to "詳細・収録曲", artist_album_path(album.id),class:"link_to_songs"%></div>
+</div>
+<% end %>
+</div>

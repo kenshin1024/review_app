@@ -14,12 +14,10 @@ ActiveRecord::Schema.define(version: 2021_06_02_085250) do
 
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.bigint "user_id"
     t.bigint "artist_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["artist_id"], name: "index_albums_on_artist_id"
-    t.index ["user_id"], name: "index_albums_on_user_id"
   end
 
   create_table "artists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -44,6 +42,5 @@ ActiveRecord::Schema.define(version: 2021_06_02_085250) do
   end
 
   add_foreign_key "albums", "artists"
-  add_foreign_key "albums", "users"
   add_foreign_key "artists", "users"
 end
