@@ -1,8 +1,6 @@
 class AlbumsController < ApplicationController
   
   def show
-    @album = Album.new
-    @albums = Artist.find(params[:artist_id]).albums.order.(id: "DESC")
   end
 
 

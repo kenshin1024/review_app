@@ -1,10 +1,9 @@
 const buildHTML = (XHR) => {
   const item = XHR.response.album;
-  debugger
   const html =`
   <div class = artist>
   <div>${item.title} </div>
-  <div><a class="link_to_albums" href="/artists/albums//${item.id}">詳細・収録曲</a></div>
+  <div><a class="link_to_albums" href="/artists/${item.id}">詳細・収録曲</a></div>
   </div> `;
   return html;
 };
@@ -17,7 +16,10 @@ function post (){
   const form = document.getElementById("form");
   const formData = new FormData(form);
   const XHR = new XMLHttpRequest();
-  XHR.open("POST", "/artists/:artist_id/albums", true);
+  const getLocation = location.href;
+  const getArtistId = getLocation.replace("http://localhost:3000/artists/", "");
+  console.log(getArtistId)
+  XHR.open("POST", `/artists/${getArtistId}/albums`, true);
   XHR.responseType = "json";
   XHR.send(formData);
   XHR.onload = () => {
