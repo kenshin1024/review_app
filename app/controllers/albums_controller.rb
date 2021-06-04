@@ -1,12 +1,23 @@
 class AlbumsController < ApplicationController
-  
+  before_action :authenticate_user!
   def show
+    @artist = Artist.find(params[:artist_id])
+    @album = Album.find(params[:album_id])
+    @songs = @album.songs.order(id: "DESC")
+    @song = Song.new
   end
 
 
   def create
     album = Album.create(album_params)
     render json: {album: album}
+  end
+
+  def edit
+    album
+  end
+
+  def destroy
   end
 
   private 

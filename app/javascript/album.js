@@ -2,6 +2,8 @@ const buildHTML = (XHR) => {
   const item = XHR.response.album;
   const getLocation2 = location.href;
   const getArtistId2 = getLocation2.replace("http://localhost:3000/artists/", "");
+  console.log(getArtistId2)
+  console.log(item.id)
   const html =`
   <div class = artist>
   <div>${item.title} </div>
@@ -20,7 +22,6 @@ function post (){
   const XHR = new XMLHttpRequest();
   const getLocation = location.href;
   const getArtistId = getLocation.replace("http://localhost:3000/artists/", "");
-  console.log(getArtistId)
   XHR.open("POST", `/artists/${getArtistId}/albums`, true);
   XHR.responseType = "json";
   XHR.send(formData);
