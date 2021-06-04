@@ -1,19 +1,18 @@
-<%= form_with url: "/artists",class: "add_form_frame",id: "form" do |form| %>
+
+<%= form_with model: @artist,class: "add_form_frame",id: "form" do |form| %>
   <%= form.text_field :title ,placeholder: "新たに追加するアーティスト名を入力してください" , class: "add_form", id: "title"%>
   <div class = add_form_submit_frame><%= form.submit :作成する ,id: "submit"%></div>
 <% end %>
 
-<div id= "list">
+<div id= list >
 <% @artists.each do |artist| %>
-  <div class="artist">
+  <div class= artist >
   <div><%= artist.title%></div>
-  <div><%= link_to "詳細・アルバム", artist_path(artist.id) %></div>
+  <div><%= link_to "詳細・アルバム", artist_path(artist.id),class:"link_to_albums"%></div>
   </div>
 <% end %>
 
 </div>
-
-
 
 
 
