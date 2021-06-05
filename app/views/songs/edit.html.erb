@@ -1,0 +1,4 @@
+<%= form_with model: [@artist,@album,@song] ,local: true,class: "add_form_frame",id: "form" do |form| %>
+  <%= form.text_field :title ,placeholder: "変更後の曲名を入力してください" , class: "add_form", id: "title"%>
+  <div class = add_form_submit_frame><%= form.submit :変更する ,id: "submit6"%></div>
+<% end %>

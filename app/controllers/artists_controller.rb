@@ -39,6 +39,7 @@ class ArtistsController < ApplicationController
     params.require(:artist).permit(:title).merge(user_id: current_user.id)
   end
 
+
   def get_artist
     @artist = Artist.find(params[:id])
   end

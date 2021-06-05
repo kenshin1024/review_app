@@ -9,6 +9,8 @@ require("@rails/activestorage").start()
 require("channels")
 require("../artist")
 require("../album")
+require("../song")
+require("../reload")
 
 
 
