@@ -1,8 +1,8 @@
 class AlbumsController < ApplicationController
   before_action :authenticate_user!
   def show
-    @artist = Artist.find(params[:artist_id])
-    @album = Album.find(params[:id])
+    get_artist
+    get_album
     @songs = @album.songs.order(id: "DESC")
     @song = Song.new
   end
@@ -14,15 +14,35 @@ class AlbumsController < ApplicationController
   end
 
   def edit
-    @album = Album.find(params[:id])
+    get_artist
+    get_album
+  end
+
+  def update
+    get_artist
+    get_album
+    @album.update(album_params)
+    redirect_to artist_path(@artist.id)
   end
 
   def destroy
+    get_artist
+    get_album
+    @album.destroy
+    redirect_to artist_path(@artist.id)
   end
 
   private 
 
   def album_params
     params.require(:album).permit(:title).merge(artist_id: params[:artist_id])
+  end
+
+  def get_artist
+    @artist = Artist.find(params[:artist_id])
+  end
+
+  def get_album
+    @album = Album.find(params[:id])
   end
 end

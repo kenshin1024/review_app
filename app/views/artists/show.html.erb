@@ -4,7 +4,7 @@
   <%= @artist.title%>
   </div>
   <div class = edit_delete>
-  <%= link_to "アーティスト名の変更",edit_artist_path(params[:id])%>
+  <%= link_to "アーティスト名の変更",edit_artist_path(@artist.id)%>
   <%= link_to "アーティストの削除", artist_path(params[:id]),method: :delete%>
   </div>
 </div>
@@ -20,7 +20,7 @@
 <% @albums.each do |album|%>
 <div class = album>
 <div><%= album.title%></div>
-  <div><%= link_to "詳細・収録曲", artist_album_path(album.id),class:"link_to_songs"%></div>
+  <div><%= link_to "詳細・収録曲", artist_album_path(@artist.id,album.id),class:"link_to_songs"%></div>
 </div>
 <% end %>
 </div>
