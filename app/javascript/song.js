@@ -2,10 +2,13 @@ const buildHTML = (XHR) => {
   const item = XHR.response.song;
   const getLocation2 = location.href;
   const html =`
-  <div class = artist>
+  <div class = song>
   <div>${item.title} </div>
-  <div><a class="link_to_albums" href="${getLocation2}/songs/${item.id}">詳細</a></div>
-  </div> `;
+  <div class="review">
+  <div class="star_rate"></div>
+  <a class="link_to_songs" href="${getLocation2}/songs/${item.id}">詳細</a>
+  <a class="link_to_album_edit" href="${getLocation2}/songs/${item.id}/edit">曲の編集</a>
+  </div>`;
   return html;
 };
   

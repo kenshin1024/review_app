@@ -32,7 +32,7 @@ class SongsController < ApplicationController
 
   private
   def song_params
-    params.require(:song).permit(:title).merge(album_id: params[:album_id])
+    params.require(:song).permit(:title,:star).merge(album_id: params[:album_id])
   end
  
   def get_artist

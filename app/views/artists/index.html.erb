@@ -9,7 +9,7 @@
 <% @artists.each do |artist| %>
   <div class= artist >
   <div><%= artist.title%></div>
-  <div><%= link_to "詳細・アルバム", artist_path(artist.id),class:"link_to_albums"%></div>
+  <div class= artist_information><%= link_to "アルバム", artist_path(artist.id),class:"link_to_albums"%><%= link_to "アーティスト名の変更" , edit_artist_path(artist.id)%></div>
   </div>
 <% end %>
 

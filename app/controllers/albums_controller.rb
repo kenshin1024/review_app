@@ -35,7 +35,7 @@ class AlbumsController < ApplicationController
   private 
 
   def album_params
-    params.require(:album).permit(:title).merge(artist_id: params[:artist_id])
+    params.require(:album).permit(:title,:star).merge(artist_id: params[:artist_id])
   end
 
   def get_artist

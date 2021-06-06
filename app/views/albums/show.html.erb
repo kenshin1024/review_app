@@ -1,16 +1,30 @@
 <div class = album_detail>
   <div class = album_name>
   <div class= sign>[アルバム名]</div>
-  <%= @album.title%>
+  <%= @album.title  %>
+  <div id="star-rate<%= @album.id%>"></div>    
+    <script>
+      $('#star-rate<%= @album.id%>').raty({
+        size      : 36,
+        starOff   : '<%= asset_path('star-off.png') %>',
+        starOn    : '<%= asset_path('star-on.png') %>',
+        starHalf  : '<%= asset_path('star-half.png')%>',
+        half      : true,
+        readOnly: true,
+        score: <%= @album.star %>,
+      });
+    </script>
   </div>
   <div class = edit_delete>
-  <%= link_to "アルバム名の変更",edit_artist_album_path(params[:artist_id],params[:id])%>
+  <%= link_to "アルバムの編集",edit_artist_album_path(params[:artist_id],params[:id])%>
   <%= link_to "アルバムの削除", artist_album_path(params[:artist_id],params[:id]),method: :delete%>
   </div>
 </div>
  
  
  <div class = space>収録曲一覧⬇︎</div>
+ 
+
 <%= form_with model:[@artist, @album, @song],class: "add_form_frame",id: "form" do |form| %>
   <%= form.text_field :title ,placeholder: "新たに追加する曲名を入力してください" , class: "add_form", id: "title"%>
   <div class = add_form_submit_frame><%= form.submit :作成する ,id: "submit3"%></div>
@@ -20,7 +34,23 @@
 <% @songs.each do |song|%>
 <div class = song>
 <div><%= song.title%></div>
-<div><%= link_to "詳細", artist_album_song_path(@artist.id,@album.id,song.id),class:"link_to_songs"%></div>
+<div class = review>
+  <div class= star_rate id="star-rate<%= song.id%>"></div>   
+  <%= link_to "詳細", artist_album_song_path(@artist.id,@album.id,song.id),class:"link_to_songs"%>
+  <%= link_to "曲の編集",edit_artist_album_song_path(@artist.id,@album.id,song.id),class: "link_to_album_edit"%>  
+    <script>
+      $('#star-rate<%= song.id%>').raty({
+        size      : 36,
+        starOff   : '<%= asset_path('star-off.png') %>',
+        starOn    : '<%= asset_path('star-on.png') %>',
+        starHalf  : '<%= asset_path('star-half.png')%>',
+        half      : true,
+        readOnly: true,
+        score: <%= song.star %>,
+      });
+    </script>
+    
+    </div>
 </div>
 <% end %>
 </div>
