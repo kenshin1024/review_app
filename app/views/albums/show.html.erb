@@ -16,8 +16,8 @@
     </script>
   </div>
   <div class = edit_delete>
-  <%= link_to "アルバムの編集",edit_artist_album_path(params[:artist_id],params[:id])%>
-  <%= link_to "アルバムの削除", artist_album_path(params[:artist_id],params[:id]),method: :delete%>
+  <%= link_to "アルバム一覧に戻る",artist_path(params[:artist_id])%>
+  <%= link_to "アルバムの削除", artist_album_path(params[:artist_id],params[:id]),id: "album_delete",method: :delete, data: {confirm: "本当に削除しますか？"}%>
   </div>
 </div>
  
@@ -36,8 +36,8 @@
 <div><%= song.title%></div>
 <div class = review>
   <div class= star_rate id="star-rate<%= song.id%>"></div>   
-  <%= link_to "詳細", artist_album_song_path(@artist.id,@album.id,song.id),class:"link_to_songs"%>
-  <%= link_to "曲の編集",edit_artist_album_song_path(@artist.id,@album.id,song.id),class: "link_to_album_edit"%>  
+  <%= link_to "曲の詳細", artist_album_song_path(@artist.id,@album.id,song.id),class:"link_to_songs"%>
+  <%= link_to "曲名・評価の変更",edit_artist_album_song_path(@artist.id,@album.id,song.id),class: "link_to_album_edit"%>  
     <script>
       $('#star-rate<%= song.id%>').raty({
         size      : 36,

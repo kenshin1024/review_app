@@ -25,3 +25,5 @@
   width:20vw;height:8vh;border: 1px solid black; 
 }
 .sign{font-size: 20px;}
+
+#album_delete{color:red;}

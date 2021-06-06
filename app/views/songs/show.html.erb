@@ -17,7 +17,7 @@
   </div>
   <div class = edit_delete>
   <%= link_to "曲の編集",edit_artist_album_song_path(params[:artist_id],params[:album_id],params[:id])%>
-  <%= link_to "曲の削除", artist_album_song_path(params[:artist_id],params[:album_id],params[:id]),method: :delete%>
+  <%= link_to "曲の削除", artist_album_song_path(params[:artist_id],params[:album_id],params[:id]),method: :delete , data: {confirm: "本当に削除しますか？"}%>
   </div>
 </div>
  

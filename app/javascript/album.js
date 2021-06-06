@@ -7,8 +7,8 @@ const buildHTML = (XHR) => {
   <div>${item.title} </div>
   <div class="review">
   <div class="star_rate"></div>
-  <a class="link_to_songs" href="${getLocation2}/albums/${item.id}">収録曲</a>
-  <a class="link_to_album_edit" href="${getLocation2}/albums/${item.id}/edit">アルバムの編集</a>
+  <a class="link_to_songs" href="${getLocation2}/albums/${item.id}">アルバム詳細</a>
+  <a class="link_to_album_edit" href="${getLocation2}/albums/${item.id}/edit">アルバム名・評価の変更</a>
   </div> 
   </div>`;
   return html;

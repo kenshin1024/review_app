@@ -17,9 +17,11 @@
   font-size: 20px;
 }
 .link_to_albums{
-  font-style: italic;
+  font-style: italic;font-size: 20px;width:20vw;
 }
 .space{
   height:8vh;font-size: 20px;padding-top: 10px;
 }
 .artist_information{display: flex;justify-content: space-between;width:30vw;}
+
+.link_to_artist_edit{font-size:20px;}
