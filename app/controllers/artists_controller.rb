@@ -1,6 +1,8 @@
 class ArtistsController < ApplicationController
   before_action :authenticate_user!
-  
+  before_action :get_artist, except: [:index, :create]
+  before_action :move_to_index, except: [:index, :create]
+ 
   def index
     @artists = Artist.where(user_id: current_user.id).order(id: "DESC")
     @artist = Artist.new
@@ -12,23 +14,19 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    get_artist
     @albums = @artist.albums.order(id: "DESC")
     @album = Album.new
   end
 
   def edit
-    get_artist
   end
 
   def destroy
-    get_artist
     @artist.destroy
     redirect_to root_path
   end
 
   def update
-    get_artist
     @artist.update(artist_params)
     redirect_to root_path
   end
@@ -42,5 +40,11 @@ class ArtistsController < ApplicationController
 
   def get_artist
     @artist = Artist.find(params[:id])
+  end
+
+  def move_to_index
+    if current_user.id != @artist.user_id
+    redirect_to root_path
+    end
   end
 end
