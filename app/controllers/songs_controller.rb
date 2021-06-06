@@ -1,4 +1,6 @@
 class SongsController < ApplicationController
+  before_action :authenticate_user!
+  
   def create
     song = Song.create(song_params)
     render json: {song: song}

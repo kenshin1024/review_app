@@ -25,3 +25,5 @@
 .artist_information{display: flex;justify-content: space-between;width:30vw;}
 
 .link_to_artist_edit{font-size:20px;}
+
+.big{font-size: 30px;}
