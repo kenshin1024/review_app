@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2021_06_04_142340) do
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.bigint "artist_id"
+    t.float "star"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["artist_id"], name: "index_albums_on_artist_id"
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 2021_06_04_142340) do
   create_table "songs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.bigint "album_id"
+    t.float "star"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["album_id"], name: "index_songs_on_album_id"

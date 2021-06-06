@@ -3,10 +3,14 @@ const buildHTML = (XHR) => {
   const getLocation2 = location.href;
   console.log(item.id)
   const html =`
-  <div class = artist>
+  <div class = album>
   <div>${item.title} </div>
-  <div><a class="link_to_albums" href="${getLocation2}/albums/${item.id}">詳細・収録曲</a></div>
-  </div> `;
+  <div class="review">
+  <div class="star_rate"></div>
+  <a class="link_to_songs" href="${getLocation2}/albums/${item.id}">収録曲</a>
+  <a class="link_to_album_edit" href="${getLocation2}/albums/${item.id}/edit">アルバムの編集</a>
+  </div> 
+  </div>`;
   return html;
 };
 

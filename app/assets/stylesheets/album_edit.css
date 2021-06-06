@@ -1,1 +1,6 @@
 #submit5{width:20vw;height:8vh;border: 1px solid black;}
+.add_form2{width:50vw;height: 10vh; text-align: center; font-size:25px;border: 1px solid blue;
+}
+.form-group.row{}
+
+.stars{width:50vw;display: flex; justify-content: space-around;align-items: center;}

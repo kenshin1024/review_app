@@ -1,9 +1,8 @@
 .song_detail{
   height:10vh;border: 1px solid black;display:flex;
 }
-
 .song_name{
-  width:70vw;border-right:1px solid black;display: flex;align-items: center;justify-content: center;font-size: 30px;
+  width:70vw;border-right:1px solid black;display: flex;align-items: center;justify-content: space-evenly;font-size: 30px;
 }
 
 .edit_delete{

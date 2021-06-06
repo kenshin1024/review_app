@@ -1,4 +1,24 @@
 <%= form_with model:[@artist, @album],local: true,class: "add_form_frame",id: "form" do |form| %>
-  <%= form.text_field :title ,placeholder: "変更後のアルバム名を入力してください" , class: "add_form", id: "title"%>
-  <div class = add_form_submit_frame><%= form.submit :変更する ,id: "submit5"%></div>
+  <%= form.text_field :title ,placeholder: "変更後のアルバム名を入力してください" , class: "add_form2", id: "title"%>
+  <div class = stars>
+  <div class="form-group row" id="star">
+    <div>評価</div>
+    <%= form.hidden_field :star, id: :review_star %>
+  </div>
+  
+<div class = add_form_submit_frame2><%= form.submit :変更する ,id: "submit5"%></div>
+</div>
+
+  <!-- 評価javascript -->
+  <script>
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+
+    scoreName: 'album[star]',
+    half: true,
+  });
+  </script>  
 <% end %>

@@ -22,3 +22,4 @@
 .space{
   height:8vh;font-size: 20px;padding-top: 10px;
 }
+.artist_information{display: flex;justify-content: space-between;width:30vw;}

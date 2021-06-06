@@ -1,3 +1,3 @@
 .header{height: 10vh; display: flex; border: 1px solid black;}
-.header_box_left{height: 10vh; width: 70vw; border-right: 1px solid black; font-size :35px;display:flex; align-items: center; justify-content:center;}
-.header_box_right{width: 30vw;display: flex;align-items: center;justify-content: space-around;}
+.header_box_left{height: 10vh; width: 70vw; border-right: 1px solid black; font-size :35px;display:flex; align-items: center; justify-content:center;background-color:lightskyblue;}
+.header_box_right{width: 30vw;display: flex;align-items: center;justify-content: space-around;background-color:aqua;}

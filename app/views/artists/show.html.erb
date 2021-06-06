@@ -2,7 +2,7 @@
 <div class = artist_detail>
   <div class = artist_name>
   <div class = sign>[アーティスト名]</div>
-  <%= @artist.title%>
+  <%= @artist.title %>
   </div>
   <div class = edit_delete>
   <%= link_to "アーティスト名の変更",edit_artist_path(@artist.id)%>
@@ -19,9 +19,25 @@
 
 <div id = list>
 <% @albums.each do |album|%>
-<div class = album>
-<div><%= album.title%></div>
-  <div><%= link_to "詳細・収録曲", artist_album_path(@artist.id,album.id),class:"link_to_songs"%></div>
+  <div class = album>
+  <div><%= album.title%></div>
+  <div class = review>
+  <div class = star_rate id="star-rate<%= album.id%>"></div>   
+  <%= link_to "収録曲", artist_album_path(@artist.id,album.id),class:"link_to_songs"%>
+  <%= link_to "アルバムの編集",edit_artist_album_path(@artist.id,album.id),class: "link_to_album_edit"%>  
+    <script>
+      $('#star-rate<%= album.id%>').raty({
+        size      : 36,
+        starOff   : '<%= asset_path('star-off.png') %>',
+        starOn    : '<%= asset_path('star-on.png') %>',
+        starHalf  : '<%= asset_path('star-half.png')%>',
+        half      : true,
+        readOnly: true,
+        score: <%= album.star %>,
+      });
+    </script>
+    
+    </div>
 </div>
 <% end %>
 </div>

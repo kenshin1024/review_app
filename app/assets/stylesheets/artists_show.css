@@ -15,9 +15,17 @@
   border: 1px solid black;font-size: 30px;height:10vh; display:flex; justify-content:space-between;align-items: center;
 }
 .link_to_songs{
-  font-style: italic;
+  font-style: italic;font-size:20px;width: 20vw;
 }
 #submit2{
   width:20vw;height:8vh;border: 1px solid black; 
 }
 .sign{font-size: 20px;}
+
+.review{height:10vh;}
+
+.back_to_artist{font-size: 15px;}
+
+.star_rate{height: 4vh;}
+
+.link_to_album_edit{font-size:20px;}

@@ -3,7 +3,7 @@ const buildHTML = (XHR) => {
   const html =`
   <div class = artist>
   <div>${item.title} </div>
-  <div><a class="link_to_albums" href="/artists/${item.id}">詳細・アルバム</a></div>
+  <div><a class="link_to_albums" href="/artists/${item.id}">アーティストの詳細</a></div>
   </div> `;
   return html;
 };

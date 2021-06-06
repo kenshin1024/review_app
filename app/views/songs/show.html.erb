@@ -1,9 +1,22 @@
 <div class = song_detail>
   <div class = song_name>
+  <div class= sign>[曲名]</div>
   <%= @song.title%>
+  <div id="star-rate<%= @song.id%>"></div>    
+    <script>
+      $('#star-rate<%= @song.id%>').raty({
+        size      : 36,
+        starOff   : '<%= asset_path('star-off.png') %>',
+        starOn    : '<%= asset_path('star-on.png') %>',
+        starHalf  : '<%= asset_path('star-half.png')%>',
+        half      : true,
+        readOnly: true,
+        score: <%= @song.star %>,
+      });
+    </script>
   </div>
   <div class = edit_delete>
-  <%= link_to "曲名の変更",edit_artist_album_song_path(params[:artist_id],params[:album_id],params[:id])%>
+  <%= link_to "曲の編集",edit_artist_album_song_path(params[:artist_id],params[:album_id],params[:id])%>
   <%= link_to "曲の削除", artist_album_song_path(params[:artist_id],params[:album_id],params[:id]),method: :delete%>
   </div>
 </div>
