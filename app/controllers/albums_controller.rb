@@ -22,7 +22,7 @@ class AlbumsController < ApplicationController
     get_artist
     get_album
     @album.update(album_params)
-    redirect_to artist_album_path(@artist.id,@album.id)
+    redirect_to artist_path(@artist.id)
   end
 
   def destroy
