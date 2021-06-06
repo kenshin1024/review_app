@@ -3,9 +3,10 @@ const buildHTML = (XHR) => {
   const html =`
   <div class = artist>
   <div>${item.title} </div>
-  <div class = "artist_information">
+  <div class = "review">
+  <div class="star_rate"></div>
   <a class="link_to_albums" href="/artists/${item.id}">アーティストの詳細</a>
-  <a href="/artists/${item.id}/edit">アーティスト名の変更</a>
+  <a class="link_to_artist_edit" href="/artists/${item.id}/edit">アーティスト名の変更</a>
   </div>
   </div> `;
   return html;
