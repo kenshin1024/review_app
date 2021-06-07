@@ -2,9 +2,9 @@
   <div class = album_name>
   <div class= sign>[アルバム名]</div>
   <%= @album.title  %>
-  <div id="star-rate<%= @album.id%>"></div>    
+  <div id="star-rate2<%= @album.id%>"></div>    
     <script>
-      $('#star-rate<%= @album.id%>').raty({
+      $('#star-rate2<%= @album.id%>').raty({
         size      : 36,
         starOff   : '<%= asset_path('star-off.png') %>',
         starOn    : '<%= asset_path('star-on.png') %>',
