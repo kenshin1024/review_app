@@ -13,7 +13,7 @@
  
  <div class = space><span class = big>アルバム</span>一覧⬇︎</div>
 <%= form_with model:[@artist, @album],class: "add_form_frame",id: "form" do |form| %>
-  <%= form.text_field :title ,placeholder: "新たに追加するアルバム名を入力してください" , class: "add_form", id: "title"%>
+  <%= form.text_field :title ,placeholder: "新たに追加するアルバム名を入力してください 空でもOK" , class: "add_form", id: "title"%>
   <div class = add_form_submit_frame><%= form.submit :作成する ,id: "submit2"%></div>
 <% end %>
 
