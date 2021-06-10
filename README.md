@@ -1,24 +1,52 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|  Column            | Type     | Options                  |
+| ------------------ | -------- | ------------------------ |
+| email              | string   | null: false, default: "" |
+| encrypted_password | string   | null: false, default: "" |
+| nickname           | string   | null: false              |
 
-Things you may want to cover:
+###  Association
 
-* Ruby version
+- has_many :artists
 
-* System dependencies
+## artistsテーブル
 
-* Configuration
+| Column             | Type       | Options                  |
+| ------------------ | ---------- | ------------------------ |
+| title              | string     | null:        false       |
+| user               | references | foreign_key: true        |
 
-* Database creation
+### Association
 
-* Database initialization
+- belongs_to :user
+- has_many   :albums
 
-* How to run the test suite
+## albumsテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column             | Type        | Options                  |
+| ------------------ | ----------- | ------------------------ |
+| title              | string      | null:       false        |
+| artist             | references  | foreign_key: true        |
+| star               | float       |                          |
 
-* Deployment instructions
+### Association
 
-* ...
+- belongs_to :artist
+- has_many   :songs
+
+## songsテーブル
+
+| Column             | Type        | Options                  |
+| ------------------ | ----------- | ------------------------ |
+| title              | string      | null:       false        |
+| album              | references  | foreign_key: true        |
+| star               | float       | foreign_key: true        |
+
+### Association
+
+- belongs_to :albums
+
+|アプリケーション名  |review-app-35548                                                                |
+|アプリケーション概要|アーティストとそのアーティストが出したアルバム、アルバムの中に入っている曲をリストとして整理し  |
+|                 |また11段階の星評価(0、 0,5、 1.0、 ...5.0)をつけて
